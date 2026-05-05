@@ -9,7 +9,6 @@ import reishiImg from "@/assets/reishi.jpg";
 import cordycepsImg from "@/assets/cordyceps.jpg";
 import otherImg from "@/assets/other-mushrooms.jpg";
 import { CertBar } from "@/components/CertBar";
-import { CTASection } from "@/components/CTASection";
 
 export const Route = createFileRoute("/")({
   head: () => ({

@@ -35,10 +35,14 @@ export const Route = createRootRoute({
       { name: "description", content: "Asia Pacific Farm Enterprises — Western Canada's largest certified-organic specialty mushroom producer. Reliable bulk supply for supermarkets and distributors." },
       { name: "author", content: "Asia Pacific Farm Enterprises Inc." },
       { property: "og:title", content: "APF Organic — Canada's Leading Organic Mushroom Supplier" },
-      { property: "og:description", content: "Reliable, certified, large-scale supply for supermarkets and distributors." },
+      { property: "og:description", content: "Asia Pacific Farm Enterprises — Western Canada's largest certified-organic specialty mushroom producer. Reliable bulk supply for supermarkets and distributors." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "APF Organic — Canada's Leading Organic Mushroom Supplier" },
+      { name: "twitter:description", content: "Asia Pacific Farm Enterprises — Western Canada's largest certified-organic specialty mushroom producer. Reliable bulk supply for supermarkets and distributors." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/204812aa-7e5c-4410-b9da-46f121271bf9/id-preview-83785f01--7dfd1e22-951c-45f3-b3a7-af77ff818eac.lovable.app-1778002208234.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/204812aa-7e5c-4410-b9da-46f121271bf9/id-preview-83785f01--7dfd1e22-951c-45f3-b3a7-af77ff818eac.lovable.app-1778002208234.png" },
     ],
     links: [
       {

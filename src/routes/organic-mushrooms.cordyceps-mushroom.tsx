@@ -24,6 +24,7 @@ function Page() {
           <p>Also called the "Chinese caterpillar mushroom" — or "winter worm, summer grass" in Chinese — Cordyceps has a long history in Traditional Chinese and Tibetan medicine, used to support the immune system and respiratory health.</p>
           <p>Cordyceps militaris contains the highest amount of nutritional components among the 400 species in the genus Cordyceps. Once exclusive to royalty due to its rarity in the wild, it is now successfully cultivated under controlled conditions.</p>
           <p>Traditionally prepared as a soup with wolfberries, ginger, red dates or other Chinese herbs added to chicken — and pairs beautifully with Reishi.</p>
+                  <WholesaleBadge />
         </div>
       </section>
       <CTASection />

@@ -23,6 +23,7 @@ function Page() {
         <div className="space-y-4 text-base text-muted-foreground">
           <p>Our specialty range includes Pom-Pom (Lion's Mane), King Oyster, and Linz-jhi varieties — all grown to the same dual-certified organic standard as our core lines.</p>
           <p>These varieties are popular with chefs and premium retail programs for their distinctive textures and flavors. Talk to our sales team about availability windows and bulk formats.</p>
+                  <WholesaleBadge />
         </div>
       </section>
       <CTASection />

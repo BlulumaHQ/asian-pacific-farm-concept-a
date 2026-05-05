@@ -28,6 +28,7 @@ function Page() {
             <p className="mt-2 font-semibold">70g · 100g · 1/2lb · 3lbs · 5lbs</p>
             <p className="mt-1 text-sm text-muted-foreground">Custom bulk formats available for distributors.</p>
           </div>
+                  <WholesaleBadge />
         </div>
       </section>
       <CTASection />

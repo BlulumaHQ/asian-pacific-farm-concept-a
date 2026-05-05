@@ -28,6 +28,7 @@ function Page() {
             <p className="text-xs font-semibold uppercase tracking-wider text-accent">Available pack sizes</p>
             <p className="mt-2 font-semibold">70g · 100g · 1/2lb · 3lbs · 5lbs</p>
           </div>
+                  <WholesaleBadge />
         </div>
       </section>
       <CTASection />

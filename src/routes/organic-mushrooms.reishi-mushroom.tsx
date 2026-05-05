@@ -24,6 +24,7 @@ function Page() {
           <p>Mostly fan-shaped and red in color, the Reishi is known as "Ling-Zhi" in Chinese. It was used as a medicinal mushroom for more than 3,000 years and was once consumed only by royalty as the "mushroom of immortality".</p>
           <p>The three main compounds in Reishi — polysaccharides, triterpenoids and adenosine — are associated with immune support and a range of pharmacological effects studied in the literature.</p>
           <p>To absorb the active ingredients effectively, Reishi is traditionally extracted by boiling in hot water and served as tea or soup. Today it is also available in tablet and granular form as a daily supplement.</p>
+                  <WholesaleBadge />
         </div>
       </section>
       <CTASection />

@@ -14,6 +14,14 @@ export const Route = createFileRoute("/faq")({
 
 const faqs = [
   {
+    q: "What is your typical lead time for new wholesale orders?",
+    a: "After confirming specs and delivery details, most new wholesale orders are scheduled into the next available production/dispatch cycle. Our sales team will confirm exact lead time based on variety, volume, and your delivery region.",
+  },
+  {
+    q: "What packaging options are available?",
+    a: "Standard retail packs are 70g, 100g, 1/2lb, 3lb and 5lb depending on variety. Custom bulk and foodservice formats are available for distributor partners — discuss with our sales team.",
+  },
+  {
     q: "What are your minimum order quantities for distributors?",
     a: "Bulk minimums depend on variety, format and delivery region. Contact our sales team — most retail and distributor programs start at standard pallet quantities with weekly replenishment.",
   },

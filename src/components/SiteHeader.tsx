@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, Leaf } from "lucide-react";
+import { TopStrip } from "./TopStrip";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -14,7 +15,9 @@ const nav = [
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
+    <div className="sticky top-0 z-50">
+    <TopStrip />
+    <header className="border-b border-border bg-background/95 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <Link to="/" className="flex items-center gap-2 font-semibold text-primary">
           <span className="flex h-9 w-9 items-center justify-center rounded-md bg-primary text-primary-foreground">
@@ -80,5 +83,6 @@ export function SiteHeader() {
         </div>
       )}
     </header>
+    </div>
   );
 }

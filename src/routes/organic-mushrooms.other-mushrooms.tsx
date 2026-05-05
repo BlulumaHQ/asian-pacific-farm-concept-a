@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/PageHero";
+import { WholesaleBadge } from "@/components/WholesaleBadge";
 import { CTASection } from "@/components/CTASection";
 import otherImg from "@/assets/other-mushrooms.jpg";
 
@@ -22,6 +23,7 @@ function Page() {
         <div className="space-y-4 text-base text-muted-foreground">
           <p>Our specialty range includes Pom-Pom (Lion's Mane), King Oyster, and Linz-jhi varieties — all grown to the same dual-certified organic standard as our core lines.</p>
           <p>These varieties are popular with chefs and premium retail programs for their distinctive textures and flavors. Talk to our sales team about availability windows and bulk formats.</p>
+                  <WholesaleBadge />
         </div>
       </section>
       <CTASection />

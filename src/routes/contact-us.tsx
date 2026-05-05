@@ -43,12 +43,12 @@ function Page() {
 
   return (
     <div>
-      <PageHero eyebrow="Bulk & Wholesale Sales" title="Talk to our sales team" subtitle="For supermarket, distributor and bulk-buyer inquiries — get in touch and our team will respond promptly." />
+      <PageHero eyebrow="Contact Our Sales Team" title="Wholesale & bulk inquiries welcome" subtitle="For supermarket, distributor and bulk-buyer inquiries — get in touch and our sales team will respond promptly. Typical response within 24–48 hours." />
       <section className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-5 lg:px-8">
         <div className="lg:col-span-2 space-y-6">
           <div>
             <h2 className="text-2xl font-bold tracking-tight text-foreground">Asia Pacific Farm Enterprises Inc.</h2>
-            <p className="mt-2 text-sm text-muted-foreground">Western Canada's largest organic specialty mushroom producer.</p>
+            <p className="mt-2 text-sm text-muted-foreground">Sales contact for supermarkets, distributors and wholesale buyers across Western Canada.</p>
           </div>
           <ul className="space-y-4 text-sm">
             <li className="flex gap-3"><MapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary" /><span>3577-268 Street<br />Aldergrove, BC V4W 3G8<br />Canada</span></li>

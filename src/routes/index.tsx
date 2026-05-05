@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Sprout, FlaskConical, Snowflake, PackageCheck, ShieldCheck, Truck, Calendar, BadgeCheck } from "lucide-react";
+import { ArrowRight, Sprout, FlaskConical, Snowflake, PackageCheck, ShieldCheck, Truck, Calendar, BadgeCheck, Building2, Store, Boxes, Microscope, ClipboardCheck, Package, Send } from "lucide-react";
 import heroImg from "@/assets/hero-greenhouse.jpg";
 import facilityImg from "@/assets/facility.jpg";
 import packingImg from "@/assets/packing.jpg";
@@ -9,7 +9,6 @@ import reishiImg from "@/assets/reishi.jpg";
 import cordycepsImg from "@/assets/cordyceps.jpg";
 import otherImg from "@/assets/other-mushrooms.jpg";
 import { CertBar } from "@/components/CertBar";
-import { CTASection } from "@/components/CTASection";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -183,7 +182,95 @@ function HomePage() {
         </div>
       </section>
 
-      <CTASection />
+      {/* Our Supply Process */}
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <p className="text-xs font-semibold uppercase tracking-widest text-accent">Our Supply Process</p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            From spawn to your distribution center
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground">
+            A fully integrated five-step process — controlled end-to-end on a single site for
+            consistent quality and reliable fulfillment.
+          </p>
+        </div>
+        <ol className="mt-12 grid gap-4 md:grid-cols-3 lg:grid-cols-5">
+          {[
+            { icon: Sprout, title: "Growing", desc: "Climate-controlled greenhouses, organic substrate." },
+            { icon: Microscope, title: "Harvesting", desc: "Hand-picked at peak freshness." },
+            { icon: ClipboardCheck, title: "Quality Control", desc: "Inspected & graded in-house." },
+            { icon: Package, title: "Packaging", desc: "Retail and bulk formats, cold-chain." },
+            { icon: Send, title: "Distribution", desc: "Scheduled delivery to partners." },
+          ].map((s, i) => (
+            <li key={s.title} className="relative rounded-xl border border-border bg-card p-5">
+              <span className="absolute right-4 top-4 text-xs font-bold text-accent">0{i + 1}</span>
+              <s.icon className="h-7 w-7 text-primary" />
+              <h3 className="mt-3 text-base font-semibold text-foreground">{s.title}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">{s.desc}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      {/* Who We Work With */}
+      <section className="bg-secondary/40 py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-widest text-accent">Who We Work With</p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                Trusted by the partners who feed Western Canada
+              </h2>
+              <p className="mt-4 text-base text-muted-foreground">
+                We supply organic specialty mushrooms — at retail and bulk volumes — to the
+                operators that power Canadian grocery and foodservice. We're built for long-term
+                wholesale partnerships.
+              </p>
+              <Link to="/become-a-distributor" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
+                Request wholesale pricing <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-3">
+              {[
+                { icon: Store, label: "Supermarkets" },
+                { icon: Truck, label: "Distributors" },
+                { icon: Building2, label: "Retail Chains" },
+                { icon: Boxes, label: "Bulk Buyers" },
+                { icon: PackageCheck, label: "Foodservice" },
+                { icon: ShieldCheck, label: "Organic Programs" },
+              ].map((t) => (
+                <div key={t.label} className="flex flex-col items-center gap-2 rounded-xl border border-border bg-card p-5 text-center">
+                  <t.icon className="h-7 w-7 text-primary" />
+                  <p className="text-sm font-semibold text-foreground">{t.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Strong B2B CTA Block */}
+      <section className="relative isolate overflow-hidden bg-primary text-primary-foreground">
+        <div className="mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold uppercase tracking-widest text-accent">Long-Term Wholesale Partnerships</p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+            Looking for a Reliable Organic Supplier?
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base text-primary-foreground/80">
+            We support long-term wholesale partnerships with predictable supply, dual-certified
+            organic compliance, and a sales team that responds within 24–48 hours.
+          </p>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Link to="/become-a-distributor" className="inline-flex items-center justify-center gap-2 rounded-md bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-lg transition hover:opacity-90">
+              Request Wholesale Pricing <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link to="/contact-us" className="inline-flex items-center justify-center rounded-md border border-primary-foreground/40 px-6 py-3 text-sm font-semibold text-primary-foreground transition hover:bg-primary-foreground/10">
+              Contact Sales Team
+            </Link>
+          </div>
+          <p className="mt-6 text-xs text-primary-foreground/60">No-obligation inquiry · Typical response 24–48 hours</p>
+        </div>
+      </section>
     </div>
   );
 }

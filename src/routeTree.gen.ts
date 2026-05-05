@@ -9,38 +9,237 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as OrganicMushroomsRouteImport } from './routes/organic-mushrooms'
+import { Route as MushroomHealthRouteImport } from './routes/mushroom-health'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as ContactUsRouteImport } from './routes/contact-us'
+import { Route as BecomeADistributorRouteImport } from './routes/become-a-distributor'
+import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as OrganicMushroomsIndexRouteImport } from './routes/organic-mushrooms.index'
+import { Route as OrganicMushroomsShittakeMushroomRouteImport } from './routes/organic-mushrooms.shittake-mushroom'
+import { Route as OrganicMushroomsReishiMushroomRouteImport } from './routes/organic-mushrooms.reishi-mushroom'
+import { Route as OrganicMushroomsOysterMushroomRouteImport } from './routes/organic-mushrooms.oyster-mushroom'
+import { Route as OrganicMushroomsOtherMushroomsRouteImport } from './routes/organic-mushrooms.other-mushrooms'
+import { Route as OrganicMushroomsCordycepsMushroomRouteImport } from './routes/organic-mushrooms.cordyceps-mushroom'
 
+const OrganicMushroomsRoute = OrganicMushroomsRouteImport.update({
+  id: '/organic-mushrooms',
+  path: '/organic-mushrooms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MushroomHealthRoute = MushroomHealthRouteImport.update({
+  id: '/mushroom-health',
+  path: '/mushroom-health',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactUsRoute = ContactUsRouteImport.update({
+  id: '/contact-us',
+  path: '/contact-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BecomeADistributorRoute = BecomeADistributorRouteImport.update({
+  id: '/become-a-distributor',
+  path: '/become-a-distributor',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutUsRoute = AboutUsRouteImport.update({
+  id: '/about-us',
+  path: '/about-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OrganicMushroomsIndexRoute = OrganicMushroomsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => OrganicMushroomsRoute,
+} as any)
+const OrganicMushroomsShittakeMushroomRoute =
+  OrganicMushroomsShittakeMushroomRouteImport.update({
+    id: '/shittake-mushroom',
+    path: '/shittake-mushroom',
+    getParentRoute: () => OrganicMushroomsRoute,
+  } as any)
+const OrganicMushroomsReishiMushroomRoute =
+  OrganicMushroomsReishiMushroomRouteImport.update({
+    id: '/reishi-mushroom',
+    path: '/reishi-mushroom',
+    getParentRoute: () => OrganicMushroomsRoute,
+  } as any)
+const OrganicMushroomsOysterMushroomRoute =
+  OrganicMushroomsOysterMushroomRouteImport.update({
+    id: '/oyster-mushroom',
+    path: '/oyster-mushroom',
+    getParentRoute: () => OrganicMushroomsRoute,
+  } as any)
+const OrganicMushroomsOtherMushroomsRoute =
+  OrganicMushroomsOtherMushroomsRouteImport.update({
+    id: '/other-mushrooms',
+    path: '/other-mushrooms',
+    getParentRoute: () => OrganicMushroomsRoute,
+  } as any)
+const OrganicMushroomsCordycepsMushroomRoute =
+  OrganicMushroomsCordycepsMushroomRouteImport.update({
+    id: '/cordyceps-mushroom',
+    path: '/cordyceps-mushroom',
+    getParentRoute: () => OrganicMushroomsRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
+  '/become-a-distributor': typeof BecomeADistributorRoute
+  '/contact-us': typeof ContactUsRoute
+  '/faq': typeof FaqRoute
+  '/mushroom-health': typeof MushroomHealthRoute
+  '/organic-mushrooms': typeof OrganicMushroomsRouteWithChildren
+  '/organic-mushrooms/cordyceps-mushroom': typeof OrganicMushroomsCordycepsMushroomRoute
+  '/organic-mushrooms/other-mushrooms': typeof OrganicMushroomsOtherMushroomsRoute
+  '/organic-mushrooms/oyster-mushroom': typeof OrganicMushroomsOysterMushroomRoute
+  '/organic-mushrooms/reishi-mushroom': typeof OrganicMushroomsReishiMushroomRoute
+  '/organic-mushrooms/shittake-mushroom': typeof OrganicMushroomsShittakeMushroomRoute
+  '/organic-mushrooms/': typeof OrganicMushroomsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
+  '/become-a-distributor': typeof BecomeADistributorRoute
+  '/contact-us': typeof ContactUsRoute
+  '/faq': typeof FaqRoute
+  '/mushroom-health': typeof MushroomHealthRoute
+  '/organic-mushrooms/cordyceps-mushroom': typeof OrganicMushroomsCordycepsMushroomRoute
+  '/organic-mushrooms/other-mushrooms': typeof OrganicMushroomsOtherMushroomsRoute
+  '/organic-mushrooms/oyster-mushroom': typeof OrganicMushroomsOysterMushroomRoute
+  '/organic-mushrooms/reishi-mushroom': typeof OrganicMushroomsReishiMushroomRoute
+  '/organic-mushrooms/shittake-mushroom': typeof OrganicMushroomsShittakeMushroomRoute
+  '/organic-mushrooms': typeof OrganicMushroomsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about-us': typeof AboutUsRoute
+  '/become-a-distributor': typeof BecomeADistributorRoute
+  '/contact-us': typeof ContactUsRoute
+  '/faq': typeof FaqRoute
+  '/mushroom-health': typeof MushroomHealthRoute
+  '/organic-mushrooms': typeof OrganicMushroomsRouteWithChildren
+  '/organic-mushrooms/cordyceps-mushroom': typeof OrganicMushroomsCordycepsMushroomRoute
+  '/organic-mushrooms/other-mushrooms': typeof OrganicMushroomsOtherMushroomsRoute
+  '/organic-mushrooms/oyster-mushroom': typeof OrganicMushroomsOysterMushroomRoute
+  '/organic-mushrooms/reishi-mushroom': typeof OrganicMushroomsReishiMushroomRoute
+  '/organic-mushrooms/shittake-mushroom': typeof OrganicMushroomsShittakeMushroomRoute
+  '/organic-mushrooms/': typeof OrganicMushroomsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about-us'
+    | '/become-a-distributor'
+    | '/contact-us'
+    | '/faq'
+    | '/mushroom-health'
+    | '/organic-mushrooms'
+    | '/organic-mushrooms/cordyceps-mushroom'
+    | '/organic-mushrooms/other-mushrooms'
+    | '/organic-mushrooms/oyster-mushroom'
+    | '/organic-mushrooms/reishi-mushroom'
+    | '/organic-mushrooms/shittake-mushroom'
+    | '/organic-mushrooms/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about-us'
+    | '/become-a-distributor'
+    | '/contact-us'
+    | '/faq'
+    | '/mushroom-health'
+    | '/organic-mushrooms/cordyceps-mushroom'
+    | '/organic-mushrooms/other-mushrooms'
+    | '/organic-mushrooms/oyster-mushroom'
+    | '/organic-mushrooms/reishi-mushroom'
+    | '/organic-mushrooms/shittake-mushroom'
+    | '/organic-mushrooms'
+  id:
+    | '__root__'
+    | '/'
+    | '/about-us'
+    | '/become-a-distributor'
+    | '/contact-us'
+    | '/faq'
+    | '/mushroom-health'
+    | '/organic-mushrooms'
+    | '/organic-mushrooms/cordyceps-mushroom'
+    | '/organic-mushrooms/other-mushrooms'
+    | '/organic-mushrooms/oyster-mushroom'
+    | '/organic-mushrooms/reishi-mushroom'
+    | '/organic-mushrooms/shittake-mushroom'
+    | '/organic-mushrooms/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutUsRoute: typeof AboutUsRoute
+  BecomeADistributorRoute: typeof BecomeADistributorRoute
+  ContactUsRoute: typeof ContactUsRoute
+  FaqRoute: typeof FaqRoute
+  MushroomHealthRoute: typeof MushroomHealthRoute
+  OrganicMushroomsRoute: typeof OrganicMushroomsRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/organic-mushrooms': {
+      id: '/organic-mushrooms'
+      path: '/organic-mushrooms'
+      fullPath: '/organic-mushrooms'
+      preLoaderRoute: typeof OrganicMushroomsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mushroom-health': {
+      id: '/mushroom-health'
+      path: '/mushroom-health'
+      fullPath: '/mushroom-health'
+      preLoaderRoute: typeof MushroomHealthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact-us': {
+      id: '/contact-us'
+      path: '/contact-us'
+      fullPath: '/contact-us'
+      preLoaderRoute: typeof ContactUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/become-a-distributor': {
+      id: '/become-a-distributor'
+      path: '/become-a-distributor'
+      fullPath: '/become-a-distributor'
+      preLoaderRoute: typeof BecomeADistributorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about-us': {
+      id: '/about-us'
+      path: '/about-us'
+      fullPath: '/about-us'
+      preLoaderRoute: typeof AboutUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +247,81 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/organic-mushrooms/': {
+      id: '/organic-mushrooms/'
+      path: '/'
+      fullPath: '/organic-mushrooms/'
+      preLoaderRoute: typeof OrganicMushroomsIndexRouteImport
+      parentRoute: typeof OrganicMushroomsRoute
+    }
+    '/organic-mushrooms/shittake-mushroom': {
+      id: '/organic-mushrooms/shittake-mushroom'
+      path: '/shittake-mushroom'
+      fullPath: '/organic-mushrooms/shittake-mushroom'
+      preLoaderRoute: typeof OrganicMushroomsShittakeMushroomRouteImport
+      parentRoute: typeof OrganicMushroomsRoute
+    }
+    '/organic-mushrooms/reishi-mushroom': {
+      id: '/organic-mushrooms/reishi-mushroom'
+      path: '/reishi-mushroom'
+      fullPath: '/organic-mushrooms/reishi-mushroom'
+      preLoaderRoute: typeof OrganicMushroomsReishiMushroomRouteImport
+      parentRoute: typeof OrganicMushroomsRoute
+    }
+    '/organic-mushrooms/oyster-mushroom': {
+      id: '/organic-mushrooms/oyster-mushroom'
+      path: '/oyster-mushroom'
+      fullPath: '/organic-mushrooms/oyster-mushroom'
+      preLoaderRoute: typeof OrganicMushroomsOysterMushroomRouteImport
+      parentRoute: typeof OrganicMushroomsRoute
+    }
+    '/organic-mushrooms/other-mushrooms': {
+      id: '/organic-mushrooms/other-mushrooms'
+      path: '/other-mushrooms'
+      fullPath: '/organic-mushrooms/other-mushrooms'
+      preLoaderRoute: typeof OrganicMushroomsOtherMushroomsRouteImport
+      parentRoute: typeof OrganicMushroomsRoute
+    }
+    '/organic-mushrooms/cordyceps-mushroom': {
+      id: '/organic-mushrooms/cordyceps-mushroom'
+      path: '/cordyceps-mushroom'
+      fullPath: '/organic-mushrooms/cordyceps-mushroom'
+      preLoaderRoute: typeof OrganicMushroomsCordycepsMushroomRouteImport
+      parentRoute: typeof OrganicMushroomsRoute
+    }
   }
 }
 
+interface OrganicMushroomsRouteChildren {
+  OrganicMushroomsCordycepsMushroomRoute: typeof OrganicMushroomsCordycepsMushroomRoute
+  OrganicMushroomsOtherMushroomsRoute: typeof OrganicMushroomsOtherMushroomsRoute
+  OrganicMushroomsOysterMushroomRoute: typeof OrganicMushroomsOysterMushroomRoute
+  OrganicMushroomsReishiMushroomRoute: typeof OrganicMushroomsReishiMushroomRoute
+  OrganicMushroomsShittakeMushroomRoute: typeof OrganicMushroomsShittakeMushroomRoute
+  OrganicMushroomsIndexRoute: typeof OrganicMushroomsIndexRoute
+}
+
+const OrganicMushroomsRouteChildren: OrganicMushroomsRouteChildren = {
+  OrganicMushroomsCordycepsMushroomRoute:
+    OrganicMushroomsCordycepsMushroomRoute,
+  OrganicMushroomsOtherMushroomsRoute: OrganicMushroomsOtherMushroomsRoute,
+  OrganicMushroomsOysterMushroomRoute: OrganicMushroomsOysterMushroomRoute,
+  OrganicMushroomsReishiMushroomRoute: OrganicMushroomsReishiMushroomRoute,
+  OrganicMushroomsShittakeMushroomRoute: OrganicMushroomsShittakeMushroomRoute,
+  OrganicMushroomsIndexRoute: OrganicMushroomsIndexRoute,
+}
+
+const OrganicMushroomsRouteWithChildren =
+  OrganicMushroomsRoute._addFileChildren(OrganicMushroomsRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutUsRoute: AboutUsRoute,
+  BecomeADistributorRoute: BecomeADistributorRoute,
+  ContactUsRoute: ContactUsRoute,
+  FaqRoute: FaqRoute,
+  MushroomHealthRoute: MushroomHealthRoute,
+  OrganicMushroomsRoute: OrganicMushroomsRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

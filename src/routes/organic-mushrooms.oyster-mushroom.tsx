@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/PageHero";
+import { WholesaleBadge } from "@/components/WholesaleBadge";
 import { CTASection } from "@/components/CTASection";
 import oysterImg from "@/assets/oyster.jpg";
 

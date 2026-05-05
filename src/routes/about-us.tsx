@@ -24,6 +24,36 @@ function AboutPage() {
         subtitle="Built over nearly three decades on a single principle — the highest-quality organic mushrooms, grown chemical-free, supplied with consistency."
       />
 
+      {/* Mission */}
+      <section className="border-b border-border bg-primary text-primary-foreground">
+        <div className="mx-auto max-w-5xl px-4 py-14 text-center sm:px-6 lg:px-8">
+          <p className="text-xs font-semibold uppercase tracking-widest text-accent">Our Mission</p>
+          <p className="mt-3 text-2xl font-semibold leading-snug sm:text-3xl">
+            "Reliable Organic Supply at Scale — bringing the highest-quality specialty mushrooms
+            to people, every day, from any background."
+          </p>
+        </div>
+      </section>
+
+      {/* Timeline */}
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <p className="text-xs font-semibold uppercase tracking-widest text-accent">Our Journey</p>
+        <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground">Nearly three decades of organic mushroom growing</h2>
+        <ol className="mt-10 grid gap-6 md:grid-cols-3">
+          {[
+            { y: "1996", t: "Founded", d: "Established by Mr. Jules Hou with a vision to lead in specialty mushroom production." },
+            { y: "Today", t: "Largest in Western Canada", d: "Recognized as the largest organic specialty mushroom grower in Western Canada." },
+            { y: "Now", t: "Built for Wholesale Scale", d: "Year-round supply for supermarkets, distributors and bulk food buyers." },
+          ].map((m) => (
+            <li key={m.y} className="rounded-xl border border-border bg-card p-6">
+              <span className="inline-block rounded-md bg-primary/10 px-3 py-1 text-xs font-bold tracking-wider text-primary">{m.y}</span>
+              <h3 className="mt-3 text-base font-semibold text-foreground">{m.t}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{m.d}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>

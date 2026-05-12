@@ -2,14 +2,12 @@ import { Link } from "@tanstack/react-router";
 import shiitakeImg from "@/assets/shiitake.jpg";
 import oysterImg from "@/assets/oyster.jpg";
 import reishiImg from "@/assets/reishi.jpg";
-import cordycepsImg from "@/assets/cordyceps.jpg";
 import otherImg from "@/assets/other-mushrooms.jpg";
 
 const all = [
   { slug: "/organic-mushrooms/shittake-mushroom", name: "Shiitake", img: shiitakeImg },
   { slug: "/organic-mushrooms/oyster-mushroom", name: "Oyster", img: oysterImg },
   { slug: "/organic-mushrooms/reishi-mushroom", name: "Reishi (Ling-Zhi)", img: reishiImg },
-  { slug: "/organic-mushrooms/cordyceps-mushroom", name: "Cordyceps", img: cordycepsImg },
   { slug: "/organic-mushrooms/other-mushrooms", name: "Specialty Varieties", img: otherImg },
 ] as const;
 

@@ -21,7 +21,6 @@ import { Route as OrganicMushroomsShittakeMushroomRouteImport } from './routes/o
 import { Route as OrganicMushroomsReishiMushroomRouteImport } from './routes/organic-mushrooms.reishi-mushroom'
 import { Route as OrganicMushroomsOysterMushroomRouteImport } from './routes/organic-mushrooms.oyster-mushroom'
 import { Route as OrganicMushroomsOtherMushroomsRouteImport } from './routes/organic-mushrooms.other-mushrooms'
-import { Route as OrganicMushroomsCordycepsMushroomRouteImport } from './routes/organic-mushrooms.cordyceps-mushroom'
 
 const OrganicMushroomsRoute = OrganicMushroomsRouteImport.update({
   id: '/organic-mushrooms',
@@ -87,12 +86,6 @@ const OrganicMushroomsOtherMushroomsRoute =
     path: '/other-mushrooms',
     getParentRoute: () => OrganicMushroomsRoute,
   } as any)
-const OrganicMushroomsCordycepsMushroomRoute =
-  OrganicMushroomsCordycepsMushroomRouteImport.update({
-    id: '/cordyceps-mushroom',
-    path: '/cordyceps-mushroom',
-    getParentRoute: () => OrganicMushroomsRoute,
-  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -102,7 +95,6 @@ export interface FileRoutesByFullPath {
   '/faq': typeof FaqRoute
   '/mushroom-health': typeof MushroomHealthRoute
   '/organic-mushrooms': typeof OrganicMushroomsRouteWithChildren
-  '/organic-mushrooms/cordyceps-mushroom': typeof OrganicMushroomsCordycepsMushroomRoute
   '/organic-mushrooms/other-mushrooms': typeof OrganicMushroomsOtherMushroomsRoute
   '/organic-mushrooms/oyster-mushroom': typeof OrganicMushroomsOysterMushroomRoute
   '/organic-mushrooms/reishi-mushroom': typeof OrganicMushroomsReishiMushroomRoute
@@ -116,7 +108,6 @@ export interface FileRoutesByTo {
   '/contact-us': typeof ContactUsRoute
   '/faq': typeof FaqRoute
   '/mushroom-health': typeof MushroomHealthRoute
-  '/organic-mushrooms/cordyceps-mushroom': typeof OrganicMushroomsCordycepsMushroomRoute
   '/organic-mushrooms/other-mushrooms': typeof OrganicMushroomsOtherMushroomsRoute
   '/organic-mushrooms/oyster-mushroom': typeof OrganicMushroomsOysterMushroomRoute
   '/organic-mushrooms/reishi-mushroom': typeof OrganicMushroomsReishiMushroomRoute
@@ -132,7 +123,6 @@ export interface FileRoutesById {
   '/faq': typeof FaqRoute
   '/mushroom-health': typeof MushroomHealthRoute
   '/organic-mushrooms': typeof OrganicMushroomsRouteWithChildren
-  '/organic-mushrooms/cordyceps-mushroom': typeof OrganicMushroomsCordycepsMushroomRoute
   '/organic-mushrooms/other-mushrooms': typeof OrganicMushroomsOtherMushroomsRoute
   '/organic-mushrooms/oyster-mushroom': typeof OrganicMushroomsOysterMushroomRoute
   '/organic-mushrooms/reishi-mushroom': typeof OrganicMushroomsReishiMushroomRoute
@@ -149,7 +139,6 @@ export interface FileRouteTypes {
     | '/faq'
     | '/mushroom-health'
     | '/organic-mushrooms'
-    | '/organic-mushrooms/cordyceps-mushroom'
     | '/organic-mushrooms/other-mushrooms'
     | '/organic-mushrooms/oyster-mushroom'
     | '/organic-mushrooms/reishi-mushroom'
@@ -163,7 +152,6 @@ export interface FileRouteTypes {
     | '/contact-us'
     | '/faq'
     | '/mushroom-health'
-    | '/organic-mushrooms/cordyceps-mushroom'
     | '/organic-mushrooms/other-mushrooms'
     | '/organic-mushrooms/oyster-mushroom'
     | '/organic-mushrooms/reishi-mushroom'
@@ -178,7 +166,6 @@ export interface FileRouteTypes {
     | '/faq'
     | '/mushroom-health'
     | '/organic-mushrooms'
-    | '/organic-mushrooms/cordyceps-mushroom'
     | '/organic-mushrooms/other-mushrooms'
     | '/organic-mushrooms/oyster-mushroom'
     | '/organic-mushrooms/reishi-mushroom'
@@ -282,18 +269,10 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OrganicMushroomsOtherMushroomsRouteImport
       parentRoute: typeof OrganicMushroomsRoute
     }
-    '/organic-mushrooms/cordyceps-mushroom': {
-      id: '/organic-mushrooms/cordyceps-mushroom'
-      path: '/cordyceps-mushroom'
-      fullPath: '/organic-mushrooms/cordyceps-mushroom'
-      preLoaderRoute: typeof OrganicMushroomsCordycepsMushroomRouteImport
-      parentRoute: typeof OrganicMushroomsRoute
-    }
   }
 }
 
 interface OrganicMushroomsRouteChildren {
-  OrganicMushroomsCordycepsMushroomRoute: typeof OrganicMushroomsCordycepsMushroomRoute
   OrganicMushroomsOtherMushroomsRoute: typeof OrganicMushroomsOtherMushroomsRoute
   OrganicMushroomsOysterMushroomRoute: typeof OrganicMushroomsOysterMushroomRoute
   OrganicMushroomsReishiMushroomRoute: typeof OrganicMushroomsReishiMushroomRoute
@@ -302,8 +281,6 @@ interface OrganicMushroomsRouteChildren {
 }
 
 const OrganicMushroomsRouteChildren: OrganicMushroomsRouteChildren = {
-  OrganicMushroomsCordycepsMushroomRoute:
-    OrganicMushroomsCordycepsMushroomRoute,
   OrganicMushroomsOtherMushroomsRoute: OrganicMushroomsOtherMushroomsRoute,
   OrganicMushroomsOysterMushroomRoute: OrganicMushroomsOysterMushroomRoute,
   OrganicMushroomsReishiMushroomRoute: OrganicMushroomsReishiMushroomRoute,

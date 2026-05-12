@@ -1,29 +1,59 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/PageHero";
 import { CTASection } from "@/components/CTASection";
-import { BadgeCheck, Calendar, PackageCheck } from "lucide-react";
+import { ArrowRight, BadgeCheck, Calendar, PackageCheck } from "lucide-react";
 import shiitakeImg from "@/assets/shiitake.jpg";
 import oysterImg from "@/assets/oyster.jpg";
 import reishiImg from "@/assets/reishi.jpg";
-import cordycepsImg from "@/assets/cordyceps.jpg";
 import otherImg from "@/assets/other-mushrooms.jpg";
 
 export const Route = createFileRoute("/organic-mushrooms/")({
   head: () => ({
     meta: [
       { title: "Organic Mushrooms — APF Organic" },
-      { name: "description", content: "Bulk organic Shiitake, Oyster, Reishi, Cordyceps and specialty mushrooms — available fresh year-round." },
+      { name: "description", content: "Bulk organic Shiitake, Oyster, Reishi and specialty mushrooms — certified organic, available fresh year-round." },
     ],
   }),
   component: OrganicMushrooms,
 });
 
 const products = [
-  { slug: "shittake-mushroom", name: "Shiitake Mushrooms", img: shiitakeImg, sci: "Lentinula edodes", packs: "70g · 100g · 1/2lb · 3lbs · 5lbs" },
-  { slug: "oyster-mushroom", name: "Oyster Mushrooms", img: oysterImg, sci: "Pleurotus ostreatus", packs: "70g · 100g · 1/2lb · 3lbs · 5lbs" },
-  { slug: "reishi-mushroom", name: "Reishi Mushrooms", img: reishiImg, sci: "Ganoderma lucidum", packs: "Bulk & specialty packs" },
-  { slug: "cordyceps-mushroom", name: "Cordyceps Mushrooms", img: cordycepsImg, sci: "Cordyceps militaris", packs: "Bulk & specialty packs" },
-  { slug: "other-mushrooms", name: "Other Specialty Mushrooms", img: otherImg, sci: "Pom-Pom · King · Linz-jhi", packs: "Custom retail & bulk" },
+  {
+    slug: "shittake-mushroom",
+    name: "Shiitake Mushrooms",
+    chinese: "香菇",
+    img: shiitakeImg,
+    sci: "Lentinula edodes",
+    packs: "70g · 100g · 1/2lb · 3lbs · 5lbs",
+    blurb: "Meaty, umami-rich — the 'king of mushrooms'.",
+  },
+  {
+    slug: "oyster-mushroom",
+    name: "Oyster Mushrooms",
+    chinese: "蠔菇",
+    img: oysterImg,
+    sci: "Pleurotus ostreatus",
+    packs: "70g · 100g · 1/2lb · 3lbs · 5lbs",
+    blurb: "Tender, velvety, foodservice-friendly.",
+  },
+  {
+    slug: "reishi-mushroom",
+    name: "Reishi Mushrooms",
+    chinese: "靈芝",
+    img: reishiImg,
+    sci: "Ganoderma lucidum",
+    packs: "Whole · sliced · powder · bulk",
+    blurb: "Functional medicinal mushroom for supplement brands.",
+  },
+  {
+    slug: "other-mushrooms",
+    name: "Specialty Varieties",
+    chinese: "猴頭菇 · 杏鮑菇",
+    img: otherImg,
+    sci: "Pom-Pom · King · Linz-jhi",
+    packs: "Custom retail & bulk",
+    blurb: "Rotating specialty crops for chefs and retailers.",
+  },
 ];
 
 function OrganicMushrooms() {
@@ -53,22 +83,39 @@ function OrganicMushrooms() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {products.map((p) => (
+      {/* Product grid — alternating wide rows for 4 products */}
+      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="space-y-8">
+          {products.map((p, i) => (
             <Link
               key={p.slug}
               to="/organic-mushrooms/$slug"
               params={{ slug: p.slug }}
-              className="group overflow-hidden rounded-xl border border-border bg-card transition hover:shadow-[var(--shadow-elegant)]"
+              className="group grid overflow-hidden rounded-2xl border border-border bg-card transition hover:shadow-[var(--shadow-elegant)] md:grid-cols-2"
             >
-              <div className="aspect-[4/3] overflow-hidden">
-                <img src={p.img} alt={p.name} loading="lazy" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+              <div className={`aspect-[4/3] overflow-hidden md:aspect-auto md:min-h-[320px] ${i % 2 === 1 ? "md:order-2" : ""}`}>
+                <img
+                  src={p.img}
+                  alt={p.name}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                />
               </div>
-              <div className="p-5">
-                <h3 className="text-lg font-semibold text-foreground">{p.name}</h3>
-                <p className="mt-1 text-xs italic text-muted-foreground">{p.sci}</p>
-                <p className="mt-3 text-sm text-muted-foreground">{p.packs}</p>
+              <div className="flex flex-col justify-center gap-3 p-8 lg:p-12">
+                <p className="text-xs font-semibold uppercase tracking-widest text-accent">
+                  0{i + 1} · Organic
+                </p>
+                <h3 className="text-2xl font-bold text-foreground sm:text-3xl">
+                  {p.name} <span className="ml-1 font-normal text-muted-foreground">{p.chinese}</span>
+                </h3>
+                <p className="text-sm italic text-muted-foreground">{p.sci}</p>
+                <p className="text-base text-muted-foreground">{p.blurb}</p>
+                <div className="mt-2 flex items-center gap-2 rounded-md bg-secondary/60 px-3 py-2 text-xs font-medium text-foreground">
+                  <PackageCheck className="h-4 w-4 text-primary" /> {p.packs}
+                </div>
+                <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-primary">
+                  View product details <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                </span>
               </div>
             </Link>
           ))}

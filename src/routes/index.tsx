@@ -6,7 +6,6 @@ import packingImg from "@/assets/packing.jpg";
 import shiitakeImg from "@/assets/shiitake.jpg";
 import oysterImg from "@/assets/oyster.jpg";
 import reishiImg from "@/assets/reishi.jpg";
-import cordycepsImg from "@/assets/cordyceps.jpg";
 import otherImg from "@/assets/other-mushrooms.jpg";
 import { CertBar } from "@/components/CertBar";
 import { TrustSeals } from "@/components/TrustSeals";
@@ -26,7 +25,6 @@ const products = [
   { slug: "shittake-mushroom", name: "Shiitake", img: shiitakeImg, desc: "King of mushrooms — meaty, umami-rich." },
   { slug: "oyster-mushroom", name: "Oyster", img: oysterImg, desc: "Tender, velvety, versatile." },
   { slug: "reishi-mushroom", name: "Reishi (Ling-Zhi)", img: reishiImg, desc: "Functional medicinal mushroom." },
-  { slug: "cordyceps-mushroom", name: "Cordyceps", img: cordycepsImg, desc: "Highly prized adaptogen." },
   { slug: "other-mushrooms", name: "Pom-Pom & King", img: otherImg, desc: "Specialty varieties year-round." },
 ];
 
@@ -111,7 +109,7 @@ function HomePage() {
               View all varieties →
             </Link>
           </div>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {products.map((p) => (
               <Link
                 key={p.slug}

@@ -45,9 +45,44 @@ export const Route = createRootRoute({
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/204812aa-7e5c-4410-b9da-46f121271bf9/id-preview-83785f01--7dfd1e22-951c-45f3-b3a7-af77ff818eac.lovable.app-1778002208234.png" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "icon", href: "/favicon.ico" },
+      { rel: "canonical", href: "https://www.apforganic.com/" },
+    ],
+    scripts: [
       {
-        rel: "stylesheet",
-        href: appCss,
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              name: "Asia Pacific Farm Enterprises Inc.",
+              alternateName: "APF Organic",
+              url: "https://www.apforganic.com/",
+              logo: "https://www.apforganic.com/logo.svg",
+              foundingDate: "1996",
+              sameAs: ["https://www.apforganic.com/"],
+            },
+            {
+              "@type": "LocalBusiness",
+              name: "Asia Pacific Farm Enterprises Inc.",
+              image: "https://www.apforganic.com/logo.svg",
+              telephone: "+1-604-856-8558",
+              email: "Farm@APForganic.com",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "3577-268 Street",
+                addressLocality: "Aldergrove",
+                addressRegion: "BC",
+                postalCode: "V4W 3G8",
+                addressCountry: "CA",
+              },
+              areaServed: "CA",
+              priceRange: "$$",
+            },
+          ],
+        }),
       },
     ],
   }),

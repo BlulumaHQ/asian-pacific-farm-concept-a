@@ -6,7 +6,6 @@ import packingImg from "@/assets/packing.jpg";
 import shiitakeImg from "@/assets/shiitake.jpg";
 import oysterImg from "@/assets/oyster.jpg";
 import reishiImg from "@/assets/reishi.jpg";
-import cordycepsImg from "@/assets/cordyceps.jpg";
 import otherImg from "@/assets/other-mushrooms.jpg";
 import { CertBar } from "@/components/CertBar";
 import { TrustSeals } from "@/components/TrustSeals";

@@ -10,6 +10,7 @@ import cordycepsImg from "@/assets/cordyceps.jpg";
 import otherImg from "@/assets/other-mushrooms.jpg";
 import { CertBar } from "@/components/CertBar";
 import { TrustSeals } from "@/components/TrustSeals";
+import { TrustIndicators } from "@/components/TrustIndicators";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -58,6 +59,7 @@ function HomePage() {
         </div>
       </section>
 
+      <TrustIndicators />
       <CertBar />
       <TrustSeals />
 

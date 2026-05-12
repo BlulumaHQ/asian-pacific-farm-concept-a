@@ -18,14 +18,14 @@ export function SiteHeader() {
   return (
     <div className="sticky top-0 z-50">
     <TopStrip />
-    <header className="border-b border-border bg-background/95 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <Link to="/" className="flex items-center gap-2 font-semibold text-primary">
-          <img src={logo} alt="APF Organic logo" className="h-11 w-auto" />
+    <header className="border-b border-border bg-background/95 shadow-sm backdrop-blur">
+      <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:h-[95px] lg:px-8">
+        <Link to="/" className="flex items-center gap-3 font-semibold text-primary sm:gap-4">
+          <img src={logo} alt="APF Organic logo" className="h-12 w-auto sm:h-14 lg:h-16" />
           <span className="flex flex-col leading-tight">
-            <span className="text-sm font-bold tracking-tight">APF Organic</span>
-            <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
-              Asia Pacific Farm
+            <span className="text-base font-bold tracking-tight sm:text-lg lg:text-xl">APF Organic</span>
+            <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground sm:text-xs">
+              Asia Pacific Farm · Since 1996
             </span>
           </span>
         </Link>

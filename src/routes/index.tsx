@@ -59,6 +59,7 @@ function HomePage() {
         </div>
       </section>
 
+      <TrustIndicators />
       <CertBar />
       <TrustSeals />
 

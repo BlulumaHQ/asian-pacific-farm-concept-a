@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X, Leaf } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { TopStrip } from "./TopStrip";
+import logo from "@/assets/logo.svg";
 
 const nav = [
   { to: "/", label: "Home" },

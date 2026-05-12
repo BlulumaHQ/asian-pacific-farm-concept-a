@@ -9,6 +9,7 @@ import reishiImg from "@/assets/reishi.jpg";
 import cordycepsImg from "@/assets/cordyceps.jpg";
 import otherImg from "@/assets/other-mushrooms.jpg";
 import { CertBar } from "@/components/CertBar";
+import { TrustSeals } from "@/components/TrustSeals";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -58,6 +59,7 @@ function HomePage() {
       </section>
 
       <CertBar />
+      <TrustSeals />
 
       {/* Capability */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">

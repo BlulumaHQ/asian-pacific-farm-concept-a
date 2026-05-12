@@ -1,14 +1,14 @@
 import { Link } from "@tanstack/react-router";
-import { Leaf } from "lucide-react";
+import logo from "@/assets/logo.svg";
 
 export function SiteFooter() {
   return (
     <footer className="mt-24 border-t border-border bg-primary text-primary-foreground">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-4 lg:px-8">
         <div>
-          <div className="flex items-center gap-2 font-semibold">
-            <span className="flex h-9 w-9 items-center justify-center rounded-md bg-primary-foreground/10">
-              <Leaf className="h-5 w-5" />
+          <div className="flex items-center gap-3 font-semibold">
+            <span className="flex h-12 w-12 items-center justify-center rounded-md bg-primary-foreground/10 p-1.5">
+              <img src={logo} alt="APF Organic logo" className="h-full w-auto" />
             </span>
             <span className="text-base font-bold">APF Organic</span>
           </div>

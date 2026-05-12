@@ -4,15 +4,15 @@ import logo from "@/assets/logo.svg";
 export function SiteFooter() {
   return (
     <footer className="mt-24 border-t border-border bg-primary text-primary-foreground">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-4 lg:px-8">
-        <div>
+      <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-12 lg:gap-10 lg:px-8">
+        <div className="lg:col-span-4 lg:pr-8">
           <div className="flex items-center gap-3 font-semibold">
-            <span className="flex h-12 w-12 items-center justify-center rounded-md bg-primary-foreground/10 p-1.5">
+            <span className="flex h-14 w-14 items-center justify-center rounded-md bg-primary-foreground/10 p-1.5">
               <img src={logo} alt="APF Organic logo" className="h-full w-auto" />
             </span>
-            <span className="text-base font-bold">APF Organic</span>
+            <span className="text-lg font-bold">APF Organic</span>
           </div>
-          <p className="mt-4 text-sm text-primary-foreground/75">
+          <p className="mt-5 text-sm leading-relaxed text-primary-foreground/75">
             Canada's largest organic specialty mushroom producer. Reliable, certified, year-round
             supply for supermarkets, distributors and bulk food buyers since 1996.
           </p>

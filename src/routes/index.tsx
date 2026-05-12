@@ -25,7 +25,6 @@ const products = [
   { slug: "shittake-mushroom", name: "Shiitake", img: shiitakeImg, desc: "King of mushrooms — meaty, umami-rich." },
   { slug: "oyster-mushroom", name: "Oyster", img: oysterImg, desc: "Tender, velvety, versatile." },
   { slug: "reishi-mushroom", name: "Reishi (Ling-Zhi)", img: reishiImg, desc: "Functional medicinal mushroom." },
-  { slug: "cordyceps-mushroom", name: "Cordyceps", img: cordycepsImg, desc: "Highly prized adaptogen." },
   { slug: "other-mushrooms", name: "Pom-Pom & King", img: otherImg, desc: "Specialty varieties year-round." },
 ];
 

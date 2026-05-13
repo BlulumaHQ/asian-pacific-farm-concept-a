@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/PageHero";
 import { CTASection } from "@/components/CTASection";
 import { BadgeCheck } from "lucide-react";
-import facilityImg from "@/assets/facility.jpg";
-import packingImg from "@/assets/packing.jpg";
+import storefrontImg from "@/assets/about-storefront.jpg";
+import signImg from "@/assets/about-sign.jpg";
 
 export const Route = createFileRoute("/about-us")({
   head: () => ({
@@ -71,14 +71,14 @@ function AboutPage() {
               bulk food buyers across the region.
             </p>
           </div>
-          <img src={facilityImg} alt="APF facility" loading="lazy" width={1600} height={900} className="rounded-xl object-cover shadow-[var(--shadow-elegant)]" />
+          <img src={storefrontImg} alt="APF Mushrooms — Asia Pacific Farm storefront in Aldergrove, BC" loading="lazy" width={1200} height={1600} className="rounded-xl object-cover shadow-[var(--shadow-elegant)]" />
         </div>
       </section>
 
       <section className="bg-secondary/40 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-            <img src={packingImg} alt="Packing room" loading="lazy" width={1280} height={800} className="order-last rounded-xl object-cover shadow-[var(--shadow-elegant)] lg:order-first" />
+            <img src={signImg} alt="APF Mushrooms — Asia Pacific Farm 亞太有機菇類農場 sign" loading="lazy" width={1200} height={1600} className="order-last rounded-xl object-cover shadow-[var(--shadow-elegant)] lg:order-first" />
             <div>
               <p className="text-xs font-semibold uppercase tracking-widest text-accent">Certified Organic, Good Neighbor</p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground">From spawn to 'shroom — chemical-free</h2>

@@ -18,7 +18,9 @@ import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as OrganicMushroomsIndexRouteImport } from './routes/organic-mushrooms.index'
 import { Route as OrganicMushroomsShittakeMushroomRouteImport } from './routes/organic-mushrooms.shittake-mushroom'
+import { Route as OrganicMushroomsPompomMushroomRouteImport } from './routes/organic-mushrooms.pompom-mushroom'
 import { Route as OrganicMushroomsOysterMushroomRouteImport } from './routes/organic-mushrooms.oyster-mushroom'
+import { Route as OrganicMushroomsKingOysterMushroomRouteImport } from './routes/organic-mushrooms.king-oyster-mushroom'
 
 const OrganicMushroomsRoute = OrganicMushroomsRouteImport.update({
   id: '/organic-mushrooms',
@@ -66,10 +68,22 @@ const OrganicMushroomsShittakeMushroomRoute =
     path: '/shittake-mushroom',
     getParentRoute: () => OrganicMushroomsRoute,
   } as any)
+const OrganicMushroomsPompomMushroomRoute =
+  OrganicMushroomsPompomMushroomRouteImport.update({
+    id: '/pompom-mushroom',
+    path: '/pompom-mushroom',
+    getParentRoute: () => OrganicMushroomsRoute,
+  } as any)
 const OrganicMushroomsOysterMushroomRoute =
   OrganicMushroomsOysterMushroomRouteImport.update({
     id: '/oyster-mushroom',
     path: '/oyster-mushroom',
+    getParentRoute: () => OrganicMushroomsRoute,
+  } as any)
+const OrganicMushroomsKingOysterMushroomRoute =
+  OrganicMushroomsKingOysterMushroomRouteImport.update({
+    id: '/king-oyster-mushroom',
+    path: '/king-oyster-mushroom',
     getParentRoute: () => OrganicMushroomsRoute,
   } as any)
 
@@ -81,7 +95,9 @@ export interface FileRoutesByFullPath {
   '/faq': typeof FaqRoute
   '/mushroom-health': typeof MushroomHealthRoute
   '/organic-mushrooms': typeof OrganicMushroomsRouteWithChildren
+  '/organic-mushrooms/king-oyster-mushroom': typeof OrganicMushroomsKingOysterMushroomRoute
   '/organic-mushrooms/oyster-mushroom': typeof OrganicMushroomsOysterMushroomRoute
+  '/organic-mushrooms/pompom-mushroom': typeof OrganicMushroomsPompomMushroomRoute
   '/organic-mushrooms/shittake-mushroom': typeof OrganicMushroomsShittakeMushroomRoute
   '/organic-mushrooms/': typeof OrganicMushroomsIndexRoute
 }
@@ -92,7 +108,9 @@ export interface FileRoutesByTo {
   '/contact-us': typeof ContactUsRoute
   '/faq': typeof FaqRoute
   '/mushroom-health': typeof MushroomHealthRoute
+  '/organic-mushrooms/king-oyster-mushroom': typeof OrganicMushroomsKingOysterMushroomRoute
   '/organic-mushrooms/oyster-mushroom': typeof OrganicMushroomsOysterMushroomRoute
+  '/organic-mushrooms/pompom-mushroom': typeof OrganicMushroomsPompomMushroomRoute
   '/organic-mushrooms/shittake-mushroom': typeof OrganicMushroomsShittakeMushroomRoute
   '/organic-mushrooms': typeof OrganicMushroomsIndexRoute
 }
@@ -105,7 +123,9 @@ export interface FileRoutesById {
   '/faq': typeof FaqRoute
   '/mushroom-health': typeof MushroomHealthRoute
   '/organic-mushrooms': typeof OrganicMushroomsRouteWithChildren
+  '/organic-mushrooms/king-oyster-mushroom': typeof OrganicMushroomsKingOysterMushroomRoute
   '/organic-mushrooms/oyster-mushroom': typeof OrganicMushroomsOysterMushroomRoute
+  '/organic-mushrooms/pompom-mushroom': typeof OrganicMushroomsPompomMushroomRoute
   '/organic-mushrooms/shittake-mushroom': typeof OrganicMushroomsShittakeMushroomRoute
   '/organic-mushrooms/': typeof OrganicMushroomsIndexRoute
 }
@@ -119,7 +139,9 @@ export interface FileRouteTypes {
     | '/faq'
     | '/mushroom-health'
     | '/organic-mushrooms'
+    | '/organic-mushrooms/king-oyster-mushroom'
     | '/organic-mushrooms/oyster-mushroom'
+    | '/organic-mushrooms/pompom-mushroom'
     | '/organic-mushrooms/shittake-mushroom'
     | '/organic-mushrooms/'
   fileRoutesByTo: FileRoutesByTo
@@ -130,7 +152,9 @@ export interface FileRouteTypes {
     | '/contact-us'
     | '/faq'
     | '/mushroom-health'
+    | '/organic-mushrooms/king-oyster-mushroom'
     | '/organic-mushrooms/oyster-mushroom'
+    | '/organic-mushrooms/pompom-mushroom'
     | '/organic-mushrooms/shittake-mushroom'
     | '/organic-mushrooms'
   id:
@@ -142,7 +166,9 @@ export interface FileRouteTypes {
     | '/faq'
     | '/mushroom-health'
     | '/organic-mushrooms'
+    | '/organic-mushrooms/king-oyster-mushroom'
     | '/organic-mushrooms/oyster-mushroom'
+    | '/organic-mushrooms/pompom-mushroom'
     | '/organic-mushrooms/shittake-mushroom'
     | '/organic-mushrooms/'
   fileRoutesById: FileRoutesById
@@ -222,6 +248,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OrganicMushroomsShittakeMushroomRouteImport
       parentRoute: typeof OrganicMushroomsRoute
     }
+    '/organic-mushrooms/pompom-mushroom': {
+      id: '/organic-mushrooms/pompom-mushroom'
+      path: '/pompom-mushroom'
+      fullPath: '/organic-mushrooms/pompom-mushroom'
+      preLoaderRoute: typeof OrganicMushroomsPompomMushroomRouteImport
+      parentRoute: typeof OrganicMushroomsRoute
+    }
     '/organic-mushrooms/oyster-mushroom': {
       id: '/organic-mushrooms/oyster-mushroom'
       path: '/oyster-mushroom'
@@ -229,17 +262,29 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OrganicMushroomsOysterMushroomRouteImport
       parentRoute: typeof OrganicMushroomsRoute
     }
+    '/organic-mushrooms/king-oyster-mushroom': {
+      id: '/organic-mushrooms/king-oyster-mushroom'
+      path: '/king-oyster-mushroom'
+      fullPath: '/organic-mushrooms/king-oyster-mushroom'
+      preLoaderRoute: typeof OrganicMushroomsKingOysterMushroomRouteImport
+      parentRoute: typeof OrganicMushroomsRoute
+    }
   }
 }
 
 interface OrganicMushroomsRouteChildren {
+  OrganicMushroomsKingOysterMushroomRoute: typeof OrganicMushroomsKingOysterMushroomRoute
   OrganicMushroomsOysterMushroomRoute: typeof OrganicMushroomsOysterMushroomRoute
+  OrganicMushroomsPompomMushroomRoute: typeof OrganicMushroomsPompomMushroomRoute
   OrganicMushroomsShittakeMushroomRoute: typeof OrganicMushroomsShittakeMushroomRoute
   OrganicMushroomsIndexRoute: typeof OrganicMushroomsIndexRoute
 }
 
 const OrganicMushroomsRouteChildren: OrganicMushroomsRouteChildren = {
+  OrganicMushroomsKingOysterMushroomRoute:
+    OrganicMushroomsKingOysterMushroomRoute,
   OrganicMushroomsOysterMushroomRoute: OrganicMushroomsOysterMushroomRoute,
+  OrganicMushroomsPompomMushroomRoute: OrganicMushroomsPompomMushroomRoute,
   OrganicMushroomsShittakeMushroomRoute: OrganicMushroomsShittakeMushroomRoute,
   OrganicMushroomsIndexRoute: OrganicMushroomsIndexRoute,
 }

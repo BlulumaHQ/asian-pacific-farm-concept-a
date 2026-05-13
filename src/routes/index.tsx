@@ -5,8 +5,8 @@ import facilityImg from "@/assets/facility.jpg";
 import packingImg from "@/assets/packing.jpg";
 import shiitakeImg from "@/assets/shiitake.jpg";
 import oysterImg from "@/assets/oyster.jpg";
-import reishiImg from "@/assets/reishi.jpg";
-import otherImg from "@/assets/other-mushrooms.jpg";
+import kingOysterImg from "@/assets/king-oyster.jpg";
+import pompomImg from "@/assets/pompom.jpg";
 import { CertBar } from "@/components/CertBar";
 import { TrustSeals } from "@/components/TrustSeals";
 import { TrustIndicators } from "@/components/TrustIndicators";
@@ -22,10 +22,10 @@ export const Route = createFileRoute("/")({
 });
 
 const products = [
-  { slug: "shittake-mushroom", name: "Shiitake", img: shiitakeImg, desc: "King of mushrooms — meaty, umami-rich." },
-  { slug: "oyster-mushroom", name: "Oyster", img: oysterImg, desc: "Tender, velvety, versatile." },
-  { slug: "reishi-mushroom", name: "Reishi (Ling-Zhi)", img: reishiImg, desc: "Functional medicinal mushroom." },
-  { slug: "other-mushrooms", name: "Pom-Pom & King", img: otherImg, desc: "Specialty varieties year-round." },
+  { slug: "oyster-mushroom", name: "Oyster Mushroom", img: oysterImg, desc: "Delicate texture, mild umami — perfect for stir fry, soups and noodles." },
+  { slug: "king-oyster-mushroom", name: "King Oyster Mushroom", img: kingOysterImg, desc: "Meaty texture with rich umami — ideal for grilling and pan searing." },
+  { slug: "shittake-mushroom", name: "Shiitake Mushroom", img: shiitakeImg, desc: "Deep earthy flavor with dense texture — a staple of Asian cuisine." },
+  { slug: "pompom-mushroom", name: "Pompom Mushroom", img: pompomImg, desc: "Soft, fluffy Lion's Mane with a unique seafood-like bite." },
 ];
 
 function HomePage() {
@@ -117,7 +117,7 @@ function HomePage() {
                 params={{ slug: p.slug }}
                 className="group overflow-hidden rounded-xl border border-border bg-card transition hover:shadow-[var(--shadow-elegant)]"
               >
-                <div className="aspect-[4/3] overflow-hidden">
+                <div className="aspect-[3/4] overflow-hidden">
                   <img src={p.img} alt={p.name} loading="lazy" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
                 </div>
                 <div className="p-5">

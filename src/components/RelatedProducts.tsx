@@ -1,14 +1,14 @@
 import { Link } from "@tanstack/react-router";
 import shiitakeImg from "@/assets/shiitake.jpg";
 import oysterImg from "@/assets/oyster.jpg";
-import reishiImg from "@/assets/reishi.jpg";
-import otherImg from "@/assets/other-mushrooms.jpg";
+import kingOysterImg from "@/assets/king-oyster.jpg";
+import pompomImg from "@/assets/pompom.jpg";
 
 const all = [
-  { slug: "/organic-mushrooms/shittake-mushroom", name: "Shiitake", img: shiitakeImg },
-  { slug: "/organic-mushrooms/oyster-mushroom", name: "Oyster", img: oysterImg },
-  { slug: "/organic-mushrooms/reishi-mushroom", name: "Reishi (Ling-Zhi)", img: reishiImg },
-  { slug: "/organic-mushrooms/other-mushrooms", name: "Specialty Varieties", img: otherImg },
+  { slug: "/organic-mushrooms/oyster-mushroom", name: "Oyster Mushroom", img: oysterImg },
+  { slug: "/organic-mushrooms/king-oyster-mushroom", name: "King Oyster Mushroom", img: kingOysterImg },
+  { slug: "/organic-mushrooms/shittake-mushroom", name: "Shiitake Mushroom", img: shiitakeImg },
+  { slug: "/organic-mushrooms/pompom-mushroom", name: "Pompom Mushroom", img: pompomImg },
 ] as const;
 
 export function RelatedProducts({ currentSlug }: { currentSlug: string }) {
@@ -32,7 +32,7 @@ export function RelatedProducts({ currentSlug }: { currentSlug: string }) {
               to={p.slug}
               className="group overflow-hidden rounded-xl border border-border bg-card transition-shadow hover:shadow-[var(--shadow-elegant)]"
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-[3/4] overflow-hidden">
                 <img
                   src={p.img}
                   alt={p.name}

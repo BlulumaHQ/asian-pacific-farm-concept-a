@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Sprout, FlaskConical, Snowflake, PackageCheck, ShieldCheck, Truck, Calendar, BadgeCheck, Building2, Store, Boxes, Microscope, ClipboardCheck, Package, Send } from "lucide-react";
-import heroImg from "@/assets/hero-greenhouse.jpg";
-import facilityImg from "@/assets/facility.jpg";
-import packingImg from "@/assets/packing.jpg";
+import capabilityImg from "@/assets/supply-capability.jpg";
+import insideFarmImg from "@/assets/inside-farm.jpg";
+import { HeroSlider } from "@/components/HeroSlider";
 import shiitakeImg from "@/assets/shiitake.jpg";
 import oysterImg from "@/assets/oyster.jpg";
 import kingOysterImg from "@/assets/king-oyster.jpg";

@@ -17,7 +17,7 @@ export function SiteFooter() {
             supply for supermarkets, distributors and bulk food buyers since 1996.
           </p>
         </div>
-        <div className="lg:col-span-2 lg:col-start-6">
+        <div className="lg:col-span-2">
           <h4 className="text-sm font-semibold uppercase tracking-wider">Company</h4>
           <ul className="mt-4 space-y-2 text-sm text-primary-foreground/75">
             <li><Link to="/about-us" className="hover:text-primary-foreground">About Us</Link></li>
@@ -26,21 +26,19 @@ export function SiteFooter() {
             <li><Link to="/faq" className="hover:text-primary-foreground">FAQ</Link></li>
           </ul>
         </div>
-        <div className="lg:col-span-3">
-          <h4 className="text-sm font-semibold uppercase tracking-wider">Partner With Us</h4>
+        <div className="lg:col-span-2">
+          <h4 className="text-sm font-semibold uppercase tracking-wider">Partner</h4>
           <ul className="mt-4 space-y-2 text-sm text-primary-foreground/75">
             <li><Link to="/become-a-distributor" className="hover:text-primary-foreground">Become a Distributor</Link></li>
             <li><Link to="/contact-us" className="hover:text-primary-foreground">Contact Sales</Link></li>
           </ul>
         </div>
-        <div className="lg:col-span-3">
+        <div className="lg:col-span-4 lg:text-right">
           <h4 className="text-sm font-semibold uppercase tracking-wider">Contact</h4>
           <address className="mt-4 space-y-1 text-sm not-italic text-primary-foreground/75">
             <p>3577-268 Street</p>
-            <p>Aldergrove, BC V4W 3G8</p>
-            <p>Canada</p>
-            <p className="pt-2">Tel: (604) 856-8558</p>
-            <p>Fax: (604) 856-6989</p>
+            <p>Aldergrove, BC V4W 3G8, Canada</p>
+            <p className="pt-2">Tel: (604) 856-8558 · Fax: (604) 856-6989</p>
             <p>
               <a href="mailto:Farm@APForganic.com" className="hover:text-primary-foreground">
                 Farm@APForganic.com

@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Sprout, FlaskConical, Snowflake, PackageCheck, ShieldCheck, Truck, Calendar, BadgeCheck, Building2, Store, Boxes, Microscope, ClipboardCheck, Package, Send } from "lucide-react";
-import heroImg from "@/assets/hero-greenhouse.jpg";
-import facilityImg from "@/assets/facility.jpg";
-import packingImg from "@/assets/packing.jpg";
+import capabilityImg from "@/assets/supply-capability.jpg";
+import insideFarmImg from "@/assets/inside-farm.jpg";
+import { HeroSlider } from "@/components/HeroSlider";
 import shiitakeImg from "@/assets/shiitake.jpg";
 import oysterImg from "@/assets/oyster.jpg";
 import kingOysterImg from "@/assets/king-oyster.jpg";
@@ -31,31 +31,7 @@ const products = [
 function HomePage() {
   return (
     <div>
-      {/* Hero */}
-      <section className="relative isolate overflow-hidden">
-        <img src={heroImg} alt="APF organic mushroom greenhouse" width={1920} height={1080} className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} />
-        <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-36">
-          <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary-foreground/30 bg-primary-foreground/10 px-3 py-1 text-xs font-medium uppercase tracking-wider text-primary-foreground backdrop-blur">
-            <BadgeCheck className="h-3.5 w-3.5" /> Certified Organic Since 1996
-          </p>
-          <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl">
-            Canada's Leading Organic Specialty Mushroom Supplier
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg text-primary-foreground/85 sm:text-xl">
-            Reliable, certified, large-scale supply for supermarkets and distributors across North
-            America — grown chemical-free in Aldergrove, British Columbia.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link to="/become-a-distributor" className="inline-flex items-center justify-center gap-2 rounded-md bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-lg transition hover:opacity-90">
-              Become a Distributor <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link to="/contact-us" className="inline-flex items-center justify-center rounded-md border border-primary-foreground/40 bg-primary-foreground/5 px-6 py-3 text-sm font-semibold text-primary-foreground backdrop-blur transition hover:bg-primary-foreground/15">
-              Contact Our Sales Team
-            </Link>
-          </div>
-        </div>
-      </section>
+      <HeroSlider />
 
       <TrustIndicators />
       <CertBar />
@@ -90,7 +66,7 @@ function HomePage() {
             </div>
           </div>
           <div className="relative">
-            <img src={facilityImg} alt="APF greenhouse facility" loading="lazy" width={1600} height={900} className="rounded-xl object-cover shadow-[var(--shadow-elegant)]" />
+            <img src={capabilityImg} alt="APF supply capability — lab, greenhouses, storage and packing" loading="lazy" width={1600} height={1067} className="rounded-xl object-cover shadow-[var(--shadow-elegant)]" />
           </div>
         </div>
       </section>
@@ -160,7 +136,7 @@ function HomePage() {
       <section className="bg-secondary/40 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <img src={packingImg} alt="APF packing facility" loading="lazy" width={1280} height={800} className="rounded-xl object-cover shadow-[var(--shadow-elegant)]" />
+            <img src={insideFarmImg} alt="Inside the APF organic mushroom farm" loading="lazy" width={1600} height={900} className="rounded-xl object-cover shadow-[var(--shadow-elegant)]" />
             <div>
               <p className="text-xs font-semibold uppercase tracking-widest text-accent">Inside the Farm</p>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">

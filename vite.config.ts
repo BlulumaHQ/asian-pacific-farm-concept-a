@@ -10,7 +10,12 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
   tanstackStart: {
-    spa: { enabled: true },
+    spa: {
+      enabled: true,
+      prerender: {
+        outputPath: "",
+      },
+    },
   },
   vite: {
     plugins: [
@@ -23,16 +28,7 @@ export default defineConfig({
             fs.writeFileSync(serverJs, "export { default } from './index.js';\n");
           }
         },
-        closeBundle() {
-          const shellPath = path.resolve("dist/client/_shell.html");
-          const indexPath = path.resolve("dist/client/index.html");
-          if (fs.existsSync(shellPath)) {
-            fs.renameSync(shellPath, indexPath);
-          }
-        },
       },
     ],
   },
 });
-
-

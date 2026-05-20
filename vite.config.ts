@@ -4,6 +4,31 @@
 //     componentTagger (dev-only), VITE_* env injection, @ path alias, React/TanStack dedupe,
 //     error logger plugins, and sandbox detection (port/host/strictPort).
 // You can pass additional config via defineConfig({ vite: { ... } }) if needed.
+import path from "node:path";
+import fs from "node:fs";
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-export default defineConfig();
+export default defineConfig({
+  tanstackStart: {
+    spa: {
+      enabled: true,
+      prerender: {
+        outputPath: "",
+      },
+    },
+  },
+  vite: {
+    plugins: [
+      {
+        name: "server-js-wrapper",
+        apply: "build",
+        writeBundle(options) {
+          if (options.dir?.endsWith("server")) {
+            const serverJs = path.join(options.dir, "server.js");
+            fs.writeFileSync(serverJs, "export { default } from './index.js';\n");
+          }
+        },
+      },
+    ],
+  },
+});

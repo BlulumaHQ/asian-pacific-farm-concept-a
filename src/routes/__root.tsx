@@ -4,6 +4,10 @@ import { SiteFooter } from "@/components/SiteFooter";
 
 import appCss from "../styles.css?url";
 
+// platform-noindex: block search indexing on *.lovable.app / *.workers.dev / *.pages.dev / *.netlify.app only; custom domains stay indexable.
+const PLATFORM_NOINDEX_SCRIPT =
+  '(function(){try{var h=location.hostname.toLowerCase().replace(/\\.$/,"");if(/(^|\\.)(lovable\\.app|workers\\.dev|pages\\.dev|netlify\\.app)$/.test(h)){var m=document.createElement("meta");m.name="robots";m.content="noindex, nofollow";document.head.appendChild(m);}}catch(e){}})();';
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -95,6 +99,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
+        <script dangerouslySetInnerHTML={{ __html: PLATFORM_NOINDEX_SCRIPT }} />
         <HeadContent />
       </head>
       <body>

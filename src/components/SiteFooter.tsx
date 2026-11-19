@@ -59,7 +59,7 @@ export function SiteFooter() {
             >
               Bluluma
             </a>
-          </p>
+          {" "}<span className="block mt-1 opacity-80" data-concept-note>Design concept for portfolio purposes only. Not the official website of Asian Pacific Farm.</span></p>
           <p>Certified Organic — COABC #03-100 · FVOPA #14-100</p>
         </div>
       </div>
